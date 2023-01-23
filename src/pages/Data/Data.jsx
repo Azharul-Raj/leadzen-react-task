@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import SingleData from "./SingleData";
 
 
 const Data = () => {
@@ -17,10 +17,12 @@ const Data = () => {
         }
         fetchUser();
     }, []);
-    console.log(users);
+    
     return (
         <div>
-            
+            {
+                users.map(user => <SingleData key={user.id} user={ user} />)
+            }
         </div>
     );
 };
